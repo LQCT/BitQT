@@ -606,23 +606,23 @@ def to_VMD(outdir, topology, first, N1, last, stride, final_array):
 
 if __name__ == '__main__':
     # >>>> Debugging <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    import argparse
-    args = argparse.Namespace()
-    args.trajectory = '../trajs/aligned_tau.dcd'
-    args.topology = '../trajs/aligned_tau.pdb'
-    args.nclust = np.inf
-    args.min_clust_size = 2
-    args.first = 0
-    args.last = None
-    args.stride = 1
-    args.selection = 'all'
-    args.cutoff = 4
-    args.outdir = 'bitQT_outputs'
+    # import argparse
+    # args = argparse.Namespace()
+    # args.trajectory = '../trajs/aligned_tau.dcd'
+    # args.topology = '../trajs/aligned_tau.pdb'
+    # args.nclust = np.inf
+    # args.min_clust_size = 2
+    # args.first = 0
+    # args.last = None
+    # args.stride = 1
+    # args.selection = 'all'
+    # args.cutoff = 4
+    # args.outdir = 'bitQT_outputs'
     # =========================================================================
     # 1. Creating binary matrix (adjacency list)
     # =========================================================================
     # ++++ Get adjacency matrix of trajectory as list of bitarrays ++++++++++++
-    # args = parse_arguments()
+    args = parse_arguments()
 
     try:
         os.makedirs(args.outdir)
