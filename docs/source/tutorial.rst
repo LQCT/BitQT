@@ -8,11 +8,23 @@ as how to visualize the clusters using a VMD plugin.
 
 Clustering a MD
 ---------------
-We included an example folder where you can find the topology and trajectory we use in this example
+.. note:: We included an example folder where you can find the topology and trajectory files
+          we have used in this example
+
+As we already mentioned, the only required argument for BitQT is the trajectory file. We will use 
+the binary dcd file *aligned_original_tau_6K.dcd*. As this file does not contain topological information, 
+it is necessarty to pass the -top argument to BitQT with an appropiate topology file. In our case, the topology
+will be the PDB formatted file *aligned_tau.pdb*. 
+
+You can run ::
+
+  $ python bitqt.py -top examples/aligned_tau.pdb -traj examples/aligned_original_tau_6K.dcd -sel all -cutoff 4 -odir 6K_4
+
+
 
 Visualizing Clusters in VMD
 ---------------------------
 
 
 
-
+ 

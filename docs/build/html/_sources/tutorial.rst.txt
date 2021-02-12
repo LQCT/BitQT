@@ -2,9 +2,23 @@
 
 Case Study Tutorials
 ====================
+Here you can find a simple example on how to run a clustering job using BitQT as well
+as how to visualize the clusters using a VMD plugin.
+
 
 Clustering a MD
 ---------------
+.. note:: We included an example folder where you can find the topology and trajectory files
+          we have used in this example
+
+As we already mentioned, the only required argument for BitQT is the trajectory file. We will use 
+the binary dcd file *aligned_original_tau_6K.dcd*. As this file does not contain topological information, 
+it is necessarty to pass the -top argument to BitQT with an appropiate topology file. In our case, the topology
+will be the PDB formatted file *aligned_tau.pdb*. 
+
+If you run ::
+
+  $ bitQT -top -traj -sel -cutoff -outdir
 
 
 Visualizing Clusters in VMD
@@ -12,4 +26,4 @@ Visualizing Clusters in VMD
 
 
 
-
+ 
