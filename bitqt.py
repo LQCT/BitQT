@@ -624,7 +624,7 @@ def get_frames_stats(clusters, N, outdir):
     frames_df['frame'] = range(len(clusters))
     frames_df['cluster_id'] = clusters
     with open(os.path.join(outdir, 'frames_statistics.txt'), 'wt') as on:
-        frames_stats.to_string(buf=on, index=False)
+        frames_df.to_string(buf=on, index=False)
     return frames_df[:N]
 
 
