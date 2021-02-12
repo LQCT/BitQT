@@ -83,7 +83,7 @@ def parse_arguments():
                        dest='nclust',
                        help='Number of clusters to retrieve\
                        [default: %(default)s]',
-                       type=int, required=False, default=2, metavar='n')
+                       type=int, required=False, default=np.inf, metavar='n')
     # Arguments: analysis -----------------------------------------------------
     out = parser.add_argument_group(title='Output options')
     out.add_argument('-odir', action='store', dest='outdir',
