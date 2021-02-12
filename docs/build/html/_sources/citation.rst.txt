@@ -1,4 +1,10 @@
 Citation
 ========
 
-This section will be completed upon academic publication.
+.. note::  This section will be completed upon academic publication.
+
+.. warning:: This section will be completed upon academic publication.
+
+.. topic:: This section will be completed upon academic publication.
+
+    Here I put some text.

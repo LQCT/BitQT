@@ -1,4 +1,5 @@
 Citation
 ========
 
-This section will be completed upon academic publication.
+.. note::  This section will be completed upon academic publication.
+
