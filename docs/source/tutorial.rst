@@ -12,19 +12,52 @@ Clustering a MD
           we have used in this example
 
 As we already mentioned, the only required argument for BitQT is the trajectory file. We will use 
-the binary dcd file *aligned_original_tau_6K.dcd*. As this file does not contain topological information, 
-it is necessarty to pass the -top argument to BitQT with an appropiate topology file. In our case, the topology
-will be the PDB formatted file *aligned_tau.pdb*. 
+the binary dcd file *aligned_original_tau_6K.dcd*. As this file does not contain any topological information, 
+it is necessarty to pass the **-top** argument to BitQT with an appropiate topology file. In this case, we will be using
+the PDB formatted file *aligned_tau.pdb*. 
 
-You can run ::
+Then you can run ::
 
   $ python bitqt.py -top examples/aligned_tau.pdb -traj examples/aligned_original_tau_6K.dcd -sel all -cutoff 4 -odir 6K_4
 
+After succesful termination, BitQT will produce some output files to the specified folder 6K_4:
+
+- The one with *.log* extension can be used to visualize all the clusters via VMD plugin as discussed in the nex section.
+-
+-
+-
 
 
 Visualizing Clusters in VMD
 ---------------------------
+BitQT produces a *file.log* that contains cluster frames in the NMRcluster format. This
+can be visualized in VMD using the clustering plugin (see :ref:`installation`).
+
+Figure 1 shows the main window of the plugin and the steps you should follow:
+
+.. figure :: _static/clustering_plugin.png
+   :align: center
+   
+   Figure 1: Main window of the VMD clustering plugin 
 
 
+1. Selection section: Here you can define the selection of atoms that you would like to visualize. 
 
+2. Import section: After loading in VMD the topology and trajectory files that you used to run BitQT,
+   go to the Import button of the plugin, select *NMRcluster* option and navigate to the
+   *file.log* produced by BitQT.
+   
+3. Results section: Here you can select which clusters to visualize. Note that through
+   the standard VMD commands, you can change the representations and customize the visualization as you want. 
+
+Do not change any of the parameters from the *Use measure cluster* section. As it indicates, these are for
+triggering the internal *measure cluster* command of VMD that does not implement QT.
+
+ 
+Figure 2 shows a loaded example. Note that only the backbone of clusters 1 and 4 have been selected.
+
+.. figure :: _static/clustering_plugin2.png
+   :align: right
+   
+   Figure 2: Visualization example
  

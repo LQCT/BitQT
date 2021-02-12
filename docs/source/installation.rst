@@ -1,3 +1,5 @@
+.. _installation:
+
 Installation
 ============
 There are some easy-to-install dependencies you must have before running BitQT.

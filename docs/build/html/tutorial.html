@@ -194,16 +194,45 @@ as how to visualize the clusters using a VMD plugin.</p>
 we have used in this example</p>
 </div>
 <p>As we already mentioned, the only required argument for BitQT is the trajectory file. We will use
-the binary dcd file <em>aligned_original_tau_6K.dcd</em>. As this file does not contain topological information,
-it is necessarty to pass the -top argument to BitQT with an appropiate topology file. In our case, the topology
-will be the PDB formatted file <em>aligned_tau.pdb</em>.</p>
-<p>If you run</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bitQT -top -traj -sel -cutoff -outdir
+the binary dcd file <em>aligned_original_tau_6K.dcd</em>. As this file does not contain any topological information,
+it is necessarty to pass the <strong>-top</strong> argument to BitQT with an appropiate topology file. In this case, we will be using
+the PDB formatted file <em>aligned_tau.pdb</em>.</p>
+<p>Then you can run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python bitqt.py -top examples/aligned_tau.pdb -traj examples/aligned_original_tau_6K.dcd -sel all -cutoff 4 -odir 6K_4
 </pre></div>
 </div>
+<p>After succesful termination, BitQT will produce some output files to the specified folder 6K_4:</p>
+<ul class="simple">
+<li><p>The one with <em>.log</em> extension can be used to visualize all the clusters via VMD plugin as discussed in the nex section.</p></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 </div>
 <div class="section" id="visualizing-clusters-in-vmd">
 <h2>Visualizing Clusters in VMD<a class="headerlink" href="#visualizing-clusters-in-vmd" title="Permalink to this headline">¶</a></h2>
+<p>BitQT produces a <em>file.log</em> that contains cluster frames in the NMRcluster format. This
+can be visualized in VMD using the clustering plugin (see <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>).</p>
+<p>Figure 1 shows the main window of the plugin and the steps you should follow:</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/clustering_plugin.png" src="_images/clustering_plugin.png" />
+<p class="caption"><span class="caption-text">Figure 1: Main window of the VMD clustering plugin</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<ol class="arabic simple">
+<li><p>Selection section: Here you can define the selection of atoms that you would like to visualize.</p></li>
+<li><p>Import section: After loading in VMD the topology and trajectory files that you used to run BitQT,
+go to the Import button of the plugin, select <em>NMRcluster</em> option and navigate to the
+<em>file.log</em> produced by BitQT.</p></li>
+<li><p>Results section: Here you can select which clusters to visualize. Note that through
+the standard VMD commands, you can change the representations and customize the visualization as you want.</p></li>
+</ol>
+<p>Do not change any of the parameters from the <em>Use measure cluster</em> section. As it indicates, these are for
+triggering the internal <em>measure cluster</em> command of VMD that does not implement QT.</p>
+<p>Figure 2 shows a loaded example. Note that only the backbone of clusters 1 and 4 have been selected.</p>
+<div class="figure align-right" id="id2">
+<img alt="_images/clustering_plugin2.png" src="_images/clustering_plugin2.png" />
+<p class="caption"><span class="caption-text">Figure 2: Visualization example</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 
