@@ -2,10 +2,7 @@
 
 Installation
 ============
-There are some easy-to-install dependencies you must have before running BitQT.
-MDTraj (mandatory) will perform the heavy RMSD calculations while VMD (optional)
-will be helpful for visualization tasks. The rest of dependencies will be automatically 
-managed by BitQT.
+There are some easy-to-install dependencies you must have before running BitQT. MDTraj (mandatory) will perform the heavy RMSD calculations, while VMD (optional) will help with visualization tasks. The rest of the dependencies will be automatically managed by BitQT.
 
 
 **MDTraj**
@@ -25,8 +22,7 @@ You can install ``mdtraj`` with ``pip``, if you prefer. ::
 
 Via **pip**:
 
-After succesful installation of ``mdtraj`` you can easily proceed to
-install BitQT and the rest of its key dependencies using pip. ::
+After successfully installing ``mdtraj`` you can easily install BitQT and the rest of its critical dependencies using pip. ::
 
   $ pip install bitqt
 

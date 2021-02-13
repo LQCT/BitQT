@@ -20,12 +20,13 @@ Then you can run ::
 
   $ python bitqt.py -top examples/aligned_tau.pdb -traj examples/aligned_original_tau_6K.dcd -sel all -cutoff 4 -odir 6K_4
 
+
 After succesful termination, BitQT will produce some output files to the specified folder 6K_4:
 
-- The one with *.log* extension can be used to visualize all the clusters via VMD plugin as discussed in the nex section.
--
--
--
+
+- A *cluster_statistics.txt* file containing clusterID, cluster_size, and its percentage from the total frames analyzed
+- A *frames_statistics.txt* file containing every frameID and its clusterID.
+- A *file.log* to visualize all the clusters via VMD plugin as discussed in the nex section.
 
 
 Visualizing Clusters in VMD
