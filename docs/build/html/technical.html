@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Technical Reference &mdash; BitQT 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Case Study Tutorials" href="tutorial.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> BitQT
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="description.html">Why BitQT ?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="description.html#how-does-bitqt-works">How Does BitQT Works ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="description.html#original-qt-algorithm">Original QT algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="description.html#parallel-with-the-maximum-clique-problem">Parallel with the Maximum Clique Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="description.html#bitqt-algorithm">BitQT Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="description.html#performance-benchmark">Performance Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="description.html#useful-alternatives">Useful Alternatives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mdtraj"><strong>MDTraj</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#bitqt"><strong>BitQT</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#vmd-and-vmd-clustering-plugin-optional"><strong>VMD</strong> and <strong>VMD clustering plugin</strong> (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Technical Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-help">Basic help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#arguments-in-details">Arguments in Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax-selection">Syntax Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#range-queries">Range queries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Case Study Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#clustering-a-md">Clustering a MD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#visualizing-clusters-in-vmd">Visualizing Clusters in VMD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Version 0.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BitQT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Technical Reference</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/technical.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="technical-reference">
+<h1>Technical Reference<a class="headerlink" href="#technical-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-help">
+<h2>Basic help<a class="headerlink" href="#basic-help" title="Permalink to this headline">¶</a></h2>
+<p>BitQT help is displayed in the console when typing <strong>bitqt -h</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bitclust -h
+
+usage: bitqt -traj trajectory [options]
+
+BitQT: A Graph-based Approach to the Quality Threshold Clustering of Molecular
+Dynamics
+
+optional arguments:
+  -h, --help           show this help message and exit
+
+Trajectory options:
+  -traj trajectory     Path to trajectory file [required]
+  -top topology        Path to the topology file
+  -first first_frame   First frame to analyze (counting from 0) [default: 0]
+  -last last_frame     Last frame to analyze (counting from 0) [default: last
+                       frame]
+  -stride stride       Stride of frames to analyze [default: 1]
+  -sel selection       Atom selection (MDTraj syntax) [default: all]
+
+Clustering options:
+  -cutoff k            RMSD cutoff [default: 2]
+  -min_clust_size m    Minimum size of returned clusters [default: 2]
+  -nclust n            Number of clusters to retrieve [default: 2]
+
+Output options:
+  -odir bitQT_outputs  Output directory to store analysis [default:
+                       bitQT_outputs]
+
+As simple as that ;)
+</pre></div>
+</div>
+</div>
+<div class="section" id="arguments-in-details">
+<h2>Arguments in Details<a class="headerlink" href="#arguments-in-details" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-traj</span> <span class="pre">(str):</span></code> This is the only argument that is <strong>always</strong> required. Valid
+extensions for trajectories are <code class="docutils literal notranslate"><span class="pre">.dcd</span></code>, <code class="docutils literal notranslate"><span class="pre">.dtr</span></code>, <code class="docutils literal notranslate"><span class="pre">.hdf5</span></code>, <code class="docutils literal notranslate"><span class="pre">.xyz</span></code>, <code class="docutils literal notranslate"><span class="pre">.binpos</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.netcdf</span></code>, <code class="docutils literal notranslate"><span class="pre">.prmtop</span></code>, <code class="docutils literal notranslate"><span class="pre">.lh5</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdb</span></code>, <code class="docutils literal notranslate"><span class="pre">.trr</span></code>, <code class="docutils literal notranslate"><span class="pre">.xtc</span></code>, <code class="docutils literal notranslate"><span class="pre">.xml</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.arc</span></code>, <code class="docutils literal notranslate"><span class="pre">.lammpstrj</span></code> and <code class="docutils literal notranslate"><span class="pre">.hoomdxml</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-top</span> <span class="pre">(str):</span></code> If trajectory format (automatically inferred from file extension)
+includes topological information this argument is not required. Otherwise, user
+must pass a path to a topology file. Valid topology extensions are  <code class="docutils literal notranslate"><span class="pre">.pdb</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.pdb.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.h5</span></code>, <code class="docutils literal notranslate"><span class="pre">.lh5</span></code>, <code class="docutils literal notranslate"><span class="pre">.prmtop</span></code>, <code class="docutils literal notranslate"><span class="pre">.parm7</span></code>, <code class="docutils literal notranslate"><span class="pre">.prm7</span></code>, <code class="docutils literal notranslate"><span class="pre">.psf</span></code>,
+<code class="docutils literal notranslate"><span class="pre">.mol2</span></code>, <code class="docutils literal notranslate"><span class="pre">.hoomdxml</span></code>, <code class="docutils literal notranslate"><span class="pre">.gro</span></code>, <code class="docutils literal notranslate"><span class="pre">.arc</span></code> and <code class="docutils literal notranslate"><span class="pre">.hdf5</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-first</span> <span class="pre">(int,</span> <span class="pre">default=0):</span></code> The first frame to analyze (starting the count from 0)</p>
+<p><code class="docutils literal notranslate"><span class="pre">-last</span> <span class="pre">(int,</span> <span class="pre">default=last):</span></code> Last frame to analyze (starting the count from 0).
+The last frame is internally detected.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-stride</span> <span class="pre">(int,</span> <span class="pre">default=1):</span></code> Stride of frames to analyze. You might want to use this argument for reducing the trajectory size when performing exploratory analysis.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-sel</span> <span class="pre">(str,</span> <span class="pre">default='all'):</span></code> Atom selection. BitQT inherits <code class="docutils literal notranslate"><span class="pre">MDtraj</span></code>
+very flexible syntax selection. Common cases are listed at the
+<a class="reference internal" href="#syntax-selection">Syntax Selection</a> section.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-cutoff</span> <span class="pre">(int,</span> <span class="pre">default=2):</span></code> RMSD cutoff for similarity measures given in Angstroms
+(1 A = 0.1 nm).</p>
+<p><code class="docutils literal notranslate"><span class="pre">-min_clust_size</span> <span class="pre">(int,</span> <span class="pre">default=2):</span></code> Minimum number of frames inside returned clusters.
+0 is not a meaningful value, and 1 implies an unclustered frame (no other frame is
+similar). Greater values of this parameter may speed up the algorithm with
+loss of uniformity in retrieved clusters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-nclust</span> <span class="pre">(int,</span> <span class="pre">default=all):</span></code> The maximum number of calculated clusters. Change the default
+for a better performance whenever you only need to inspect the first clusters.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-ref</span> <span class="pre">(int,</span> <span class="pre">default=0):</span></code> Reference frame to align trajectory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-odir</span> <span class="pre">(str,</span> <span class="pre">default=&quot;./bitQT_outputs&quot;):</span></code> Output directory to store analysis.
+BitQT checks for outdir existence to avoid overwriting it.</p>
+</div>
+<div class="section" id="syntax-selection">
+<h2>Syntax Selection<a class="headerlink" href="#syntax-selection" title="Permalink to this headline">¶</a></h2>
+<p>BitQT inherits atom selection syntax from <strong>MDTraj</strong>, which is similar to that in VMD. We reproduce below some of the <strong>MDTraj</strong> examples. Note that in BitQT, all keywords (or their synonyms) string are passed directly to <code class="docutils literal notranslate"><span class="pre">-sel</span></code> argument. For more details on possible syntax, please refer to
+<a class="reference external" href="http://mdtraj.org/1.9.4/atom_selection.html">MDTraj original documentation</a>.</p>
+<p>BitQT recognizes the following keywords.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 21%" />
+<col style="width: 8%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Keyword</p></td>
+<td><p>Synonyms</p></td>
+<td><p>Type</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">all</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">everything</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Matches everything</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">none</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">nothing</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Matches nothing</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">backbone</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is_backbone</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether atom is in the backbone of a protein residue</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sidechain</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is_sidechain</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether atom is in the sidechain of a protein residue</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">protein</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is_protein</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether atom is part of a protein residue</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">water</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is_water</span></code>, <code class="docutils literal notranslate"><span class="pre">waters</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether atom is part of a water residue</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Atom name</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">index</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Atom index (0-based)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">element</span></code>, <code class="docutils literal notranslate"><span class="pre">symbol</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>1 or 2-letter chemical symbols from the periodic table</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mass</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">float</span></code></p></td>
+<td><p>Element atomic mass (daltons)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">residue</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">resSeq</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Residue Sequence record (generally 1-based, but depends on topology)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">resid</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">resi</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Residue index (0-based)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">resname</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">resn</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>Residue name</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rescode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">code</span></code>, <code class="docutils literal notranslate"><span class="pre">resc`</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">str</span></code></p></td>
+<td><p>1-letter residue code</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">chainid</span></code></p></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span></code></p></td>
+<td><p>Chain index (0-based)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="operators">
+<h3>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
+<p>Standard boolean operations (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code>) as well as their
+C-style aliases (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>) are supported. The expected logical
+operators (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) are also available, as
+along with their FORTRAN-style synonyms (<code class="docutils literal notranslate"><span class="pre">lt</span></code>, <code class="docutils literal notranslate"><span class="pre">le</span></code>, <code class="docutils literal notranslate"><span class="pre">eq</span></code>, <code class="docutils literal notranslate"><span class="pre">ne</span></code>,
+<code class="docutils literal notranslate"><span class="pre">ge</span></code>, <code class="docutils literal notranslate"><span class="pre">gt</span></code>).</p>
+</div>
+<div class="section" id="range-queries">
+<h3>Range queries<a class="headerlink" href="#range-queries" title="Permalink to this headline">¶</a></h3>
+<p>Range queries are also supported. The range condition is an expression of
+the form <code class="docutils literal notranslate"><span class="pre">&lt;expression&gt;</span> <span class="pre">&lt;low&gt;</span> <span class="pre">to</span> <span class="pre">&lt;high&gt;</span></code>, which resolves to <code class="docutils literal notranslate"><span class="pre">&lt;low&gt;</span> <span class="pre">&lt;=</span>
+<span class="pre">&lt;expression&gt;</span> <span class="pre">&lt;=</span> <span class="pre">&lt;high&gt;</span></code>.  For example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The following queries are equivalent</span>
+<span class="o">-</span><span class="n">sel</span> <span class="s2">&quot;resid 10 to 30&quot;</span>
+<span class="o">-</span><span class="n">sel</span> <span class="s2">&quot;(10 &lt;= resid) and (resid &lt;= 30)&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Case Study Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Roy Gonzalez-Aleman
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
