@@ -561,6 +561,8 @@ def to_VMD(outdir, topology, first, N1, last, stride, final_array):
 
     Parameters
     ----------
+    outdir : str
+        Path where to create the VMD visualization .log.
     topology : str
         Path to the topology file.
     first : int
@@ -578,7 +580,6 @@ def to_VMD(outdir, topology, first, N1, last, stride, final_array):
     -------
     logname : str
         Log file to be used with VMD.
-
     """
     basename = os.path.basename(topology).split('.')[0]
     logname = os.path.join(outdir, '{}.log'.format(basename))
@@ -602,33 +603,59 @@ def to_VMD(outdir, topology, first, N1, last, stride, final_array):
                 str_frames = [str(x) for x in real_frames]
                 members = ' '.join(str_frames)
                 clq.write('Members: ' + members + '\n\n')
+        if 0 in np.unique(final_array):
+            clq.write('{}:\n'.format(0))
+            cframes = np.where(final_array == 0)[0]
+            if vmd_offset:
+                real_frames = slice_frames[cframes] + nmr_offset + vmd_offset
+            else:
+                real_frames = slice_frames[cframes] + nmr_offset
+            str_frames = [str(x) for x in real_frames]
+            members = ' '.join(str_frames)
+            clq.write('Members: ' + members + '\n\n')
     return logname
 
 
-def get_frames_stats(clusters, N, outdir):
+def get_frames_stats(N1, first, last, stride, clusters, outdir):
     """
     Get "frames_statistics.txt" containing frameID, clusterID.
 
     Parameters
     ----------
+    N1 : int
+        default value when last == None.
+    first : int
+        First frame to consider (0-based indexing).
+
+    last : TYPE
+        Last frame to consider (0-based indexing).
+    stride : TYPE
+        Stride (step).
     clusters : numpy.ndarray
         array of clusters ID.
+    outdir : str
+        Path where to create the VMD visualization .log.
 
     Returns
     -------
     frames_df : pandas.DataFrame
         dataframe with frames_statistics info.
-
     """
+    start = first
+    if not last:
+        stop = N1
+    else:
+        stop = last
+    slice_frames = np.arange(start, stop, stride, dtype=np.int32)
     frames_df = pd.DataFrame(columns=['frame', 'cluster_id'])
-    frames_df['frame'] = range(len(clusters))
-    frames_df['cluster_id'] = clusters
+    frames_df['frame'] = range(N1)
+    frames_df['cluster_id'].loc[slice_frames] = clusters
     with open(os.path.join(outdir, 'frames_statistics.txt'), 'wt') as on:
         frames_df.to_string(buf=on, index=False)
-    return frames_df[:N]
+    return frames_df
 
 
-def get_cluster_stats(clusters, N, outdir):
+def get_cluster_stats(clusters, outdir):
     """
     Get "cluster_statistics.txt" containing clusterID, cluster_size, and
     cluster percentage from trajectory.
@@ -637,13 +664,14 @@ def get_cluster_stats(clusters, N, outdir):
     ----------
     clusters : numpy.ndarray
         array of clusters ID.
+    outdir : str
+        Path where to create the VMD visualization .log.
 
     Returns
     -------
     clusters_df : pandas.DataFrame
         dataframe with cluster_statistics info.
     """
-    clusters = clusters[:N]
     clusters_df = pd.DataFrame(columns=['cluster_id', 'size', 'percent'])
     clusters_df['cluster_id'] = list(range(0, clusters.max() + 1))
     sizes = []
@@ -668,9 +696,9 @@ if __name__ == '__main__':
     # args.topology = '../trajs/aligned_tau.pdb'
     # args.nclust = np.inf
     # args.min_clust_size = 2
-    # args.first = 0
-    # args.last = None
-    # args.stride = 1
+    # args.first = 1000
+    # args.last = 6000
+    # args.stride = 3
     # args.selection = 'all'
     # args.cutoff = 4
     # args.outdir = 'bitQT_outputs'
@@ -782,7 +810,9 @@ if __name__ == '__main__':
                                                 '{}.pick'.format(outname)))
     # saving VMD visualization script
     to_VMD(args.outdir, args.topology, args.first, args.last, N1, args.stride,
-           clusters_array)
+           clusters_array[:m])
     # saving clustering info  files
-    frames_stats = get_frames_stats(clusters_array, m, args.outdir)
-    cluster_stats = get_cluster_stats(clusters_array, m, args.outdir)
+    frames_stats = get_frames_stats(N1, args.first, args.last, args.stride,
+                                    clusters_array[:m], args.outdir)
+    cluster_stats = get_cluster_stats(clusters_array[:m], args.outdir)
+    print('\n\nNormal Termination of BitQT :)')
