@@ -13,7 +13,7 @@ Clustering a MD
 
 As we already mentioned, the only required argument for BitQT is the trajectory file. We will use 
 the binary dcd file *aligned_original_tau_6K.dcd*. As dcd format does not contain any topological information, 
-it is necessarty to pass the **-top** argument to BitQT with an appropiate topology file. In this case, we will be using
+it is necessarty to pass the **-top** argument with an appropiate topology file. In this case, we will be using
 the PDB formatted file *aligned_tau.pdb*. 
 
 Then you can run ::
