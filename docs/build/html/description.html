@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Why BitQT ? &mdash; BitQT 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="prev" title="Welcome to BitQT’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> BitQT
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Why BitQT ?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-bitqt-works">How Does BitQT Works ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#original-qt-algorithm">Original QT algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-with-the-maximum-clique-problem">Parallel with the Maximum Clique Problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bitqt-algorithm">BitQT Algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-benchmark">Performance Benchmark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#useful-alternatives">Useful Alternatives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mdtraj"><strong>MDTraj</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#bitqt"><strong>BitQT</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#vmd-and-vmd-clustering-plugin-optional"><strong>VMD</strong> and <strong>VMD clustering plugin</strong> (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="technical.html">Technical Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="technical.html#basic-help">Basic help</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical.html#arguments-in-details">Arguments in Details</a></li>
+<li class="toctree-l2"><a class="reference internal" href="technical.html#syntax-selection">Syntax Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="technical.html#operators">Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="technical.html#range-queries">Range queries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Case Study Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#clustering-a-md">Clustering a MD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#visualizing-clusters-in-vmd">Visualizing Clusters in VMD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Version 0.0.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">BitQT</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Why BitQT ?</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/description.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="why-bitqt">
+<h1>Why BitQT ?<a class="headerlink" href="#why-bitqt" title="Permalink to this headline">¶</a></h1>
+<p>There are plenty of clustering algorithms for analyzing MD out there, so why QT
+over those others? Well, not all kind of algorithms suit all problemic situations
+with the same performance. In those particular cases where strongly geometrically
+correlated conformations are needed to be returned as clusters, QT stands out as
+an ideal option because that guarantees that no pair of frames having a similarity
+value greater than a user-specified cutoff will coalesce into the same cluster.</p>
+<p>This sounds great, but in practice, exact (and even approximate) implementations
+of QT are computationally expensive. That’s where BitQT enters the scne. This heuristic
+makes a parallel with the Maximum Clique Problem (MCP) and treats QT problem as
+a search of cliques in a mathemathical graph. As it is possible to conduct this
+search using vector of bits, BitQT is a fast and memory efficient alternative to
+the few other current implementations.</p>
+<div class="section" id="how-does-bitqt-works">
+<h2>How Does BitQT Works ?<a class="headerlink" href="#how-does-bitqt-works" title="Permalink to this headline">¶</a></h2>
+<p>Here we expose briefly the basis of BitQT assumptions and the key aspects of the algorithm.
+You can refer to the academic publication for more details.</p>
+<div class="section" id="original-qt-algorithm">
+<h3>Original QT algorithm<a class="headerlink" href="#original-qt-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>The application of the original QT to an MD trajectory can be described as follows:
+After the selection of a similarity threshold <strong>k</strong>, one arbitrary frame is selected
+and marked as a candidate cluster <strong>C1</strong>. The remaining frames are iteratively added
+to <strong>C1</strong> if and only if two conditions hold;</p>
+<ul class="simple">
+<li><p><em>Condition 1:</em> the similarity distance between the entering frame and every frame inside <strong>C1</strong> is the minimum possible, and</p></li>
+<li><p><em>Condition 2:</em>- the similarity distance between the entering frame and every frame already
+inside <strong>C1</strong> does not exceed the threshold <strong>k</strong>.</p></li>
+</ul>
+<p>This process continues for all frames <strong>n</strong> in the trajectory until <strong>Cn</strong> candidate
+clusters have been formed. The one with more frames is set as a cluster, its elements
+removed from further consideration, and the entire process repeated until no more clusters can be discovered.</p>
+</div>
+<div class="section" id="parallel-with-the-maximum-clique-problem">
+<h3>Parallel with the Maximum Clique Problem<a class="headerlink" href="#parallel-with-the-maximum-clique-problem" title="Permalink to this headline">¶</a></h3>
+<p>The most importat aspect of the original algorithm is its guarantee that
+all pairwise similarities inside a cluster will remain under the threshold <strong>k</strong>.
+This aspect is assured by <em>Condition 2</em>. <em>Condition 1</em> merely limits the size of retrieved
+clusters but has no impact in maintaining the similarity threshold.</p>
+<p>From Graph Theory, we know that a <em>clique</em> is a subgraph in which vertices are all pairwise adjacent.
+If a clique is not contained in any other clique, it is said to be <em>maximal</em>, while the term
+<em>maximum clique</em> denotes the maximal clique with a maximum number of nodes. The maximum clique problem
+(MCP) deals with the challenge of finding the maximum clique inside a given graph.</p>
+<p>To make a parallel between QT and the MCP, we represent each frame of an MD trajectory
+as a node of an undirected graph in which edges depict RMSD similarity between nodes.
+Only edges with an RMSD less or equal than the threshold <strong>k</strong> are allowed. In that context,
+QT can be declared as an iterative search of cliques. QT cliques, however, are not necessarily
+maximum due to <em>Condition 1</em> of the algorithm, which ensures that they should have a minimum weight
+instead of a maximum cardinality.</p>
+<p>Conveniently, a redefinition of the QT algorithm can be made to search for maximum-sized
+clusters instead of minimum-weighted without compromising the pairwise similarity assured
+by the <em>Condition 2</em>. Relaxation of <em>Condition 1</em> in this way, automatically converts QT in an MCP problem,
+accessible by the graph theory tools.</p>
+<p>This approach has a profound impact on how molecular similarity can be encoded and in the efficiency
+of algorithms that can be used to solve the problem, as discussed in the next sections.</p>
+</div>
+<div class="section" id="bitqt-algorithm">
+<h3>BitQT Algorithm<a class="headerlink" href="#bitqt-algorithm" title="Permalink to this headline">¶</a></h3>
+<p><strong>1. RMSD-encoded Binary Matrix</strong></p>
+<p>If we conceive the QT algorithm as an MCP problem, after relaxation of <em>Condition 1</em>
+our search will be focused on finding cliques of maximum cardinality, and no useful
+information is extracted from the weight of the edges other than its absence or existence.
+This information can therefore be encoded as a binary matrix <strong>M</strong> where <strong>M_ij=1</strong> if nodes
+<strong>i</strong> and <strong>j</strong> are similar (<em>RMSD_ij &lt;= k</em>) or 0 otherwise.</p>
+<p>Besides the RAM saving, expressing similarity as a binary matrix offers the possibility
+to perform the search of cliques using binary operators (AND and XOR), contributing to the
+speedup of the heuristic we propose in the following sections.</p>
+<p><strong>2. Nodes coloring</strong></p>
+<p>Each vertex of the input graph (Graph 1, Figure 1) is ranked (column R, Matrix 1, Figure 1)
+in descending order of their corresponding degrees (column D, Matrix 1, Figure 1).
+Following the rank order, each vertex takes a color label that it shares with all other
+vertices that are neither colored nor neighbors (column C, Matrix 1, Figure 1).</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/diagram.png" src="_images/diagram.png" />
+<p class="caption"><span class="caption-text">Figure 1: Workflow diagram of BitQT algorithm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p><strong>3. Clique search from the maximum degree node</strong></p>
+<p>After all vertices are colored, the search of a clique starts considering only
+neighbors of the maximum degree node of the graph (Graph 1A, Figure 1), which
+is called the <em>seed</em> of the clique (node 1 in Matrix 1A, Graph 1A, Figure 1).
+Neighbors of the seed are strictly ordered for further
+processing following three criteria (DCg ordering); descending order of
+their degrees, ascending order of their color class, and ascending order of
+the degeneracy of the color class (columns D, C, and g, respectively,
+Matrix 1A, Figure 1).  Following this ordering, the first node is selected
+to start a clique, and subsequent nodes will be added to that clique if they
+have a still-not-explored color and if they are adjacent to previously explored
+nodes (clique propagation).</p>
+<p>BitQT performs this search using bitwise operations. The bit-vector Bi
+corresponding to the maximum degree node is set as the clique
+bit-vector (B1 in Heuristic search of Graph 1A, Figure 1). Following the DCg ordering,
+an AND operation is performed between the clique bit-vector and the next node bit-vector
+if it has a new color (B6 in Heuristic search of Graph 1A, Figure 1). Indices corresponding
+to bits that become zero by this operation are discarded from further consideration
+(B2, B3, B4, and B5) as they are not adjacent to processed nodes (B1 and B6). The resulting
+bit-vector becomes the new clique bit-vector used for the AND operation with the next
+candidate following the DCg ordering (B9). The bit-vector resulting from the iterative
+AND operations contains the members of the first clique.</p>
+<p><strong>4. Clique search from promising nodes</strong></p>
+<p>Once the clique retrieved by using the maximum degree node as the seed is found in the
+previous step, the same exploration strategy is conducted for every emph{promising node}
+in the original graph (Graph 1). A promising node (B8 in Graph 1, Figure 1) is defined as
+a node with a color not present in the first clique and whose degree is higher than the
+number of nodes in the first clique. Using such nodes as seeds for propagation might lead
+to the formation of a bigger clique (Heuristic search of Graph 1B, Scheme 1).</p>
+<p><strong>5. Conclusion and updating</strong></p>
+<p>When the maximum degree node and all promising nodes have been used as seeds, the maximum
+clique found is picked as a cluster, and their nodes removed from the input graph
+(the corresponding Bi vectors removed from the binary matrix). An
+updating of the remaining bit-vector is necessary to set as zero all entries
+corresponding to nodes that formed the cluster, which will not be
+available for subsequent iterations. This updating is bitwise encoded as a consecutive
+AND/XOR operation between remaining bit-vectors and the clique bit-vector
+(Conclusion of iteration 1, Figure 1). The same steps are repeated from Step 3 until
+no more cliques can be found.</p>
+</div>
+</div>
+<div class="section" id="performance-benchmark">
+<h2>Performance Benchmark<a class="headerlink" href="#performance-benchmark" title="Permalink to this headline">¶</a></h2>
+<p>The two QT implementations used for comparisons correspond to the
+<a class="reference external" href="https://doi.org/10.1021/acs.jcim.9b00558">QT code</a> (QTPy), and the
+qtcluster command distributed in version 6.0.1 of the <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/(SICI)1096-987X(19971130)18:15%3C1848::AID-JCC2%3E3.0.CO;2-O">ORAC package</a>.</p>
+<p>MD trajectories of different sizes and compositions were selected: <strong>6K</strong>- a 6001
+frames REMD simulation of the Tau peptide, <strong>30K</strong>- a 30605 frames MD of
+villin headpiece based on PDB 2RJY, <strong>50K</strong>- a 50500 frames MD of serotype 18C
+of Streptococcus Pneumoniae, <strong>100K</strong>- a 100500 frames MD of Cyclophilin A based
+on PDB 2N0T, and <strong>250K</strong>- a 250000 frames MD of four chains of the Tau peptide
+that corresponds to the MD simulation of an extended Tau peptide (PHF8) during
+1 microsecond.</p>
+<div class="figure align-center" id="id2">
+<img alt="_images/benchmark_bitqt.png" src="_images/benchmark_bitqt.png" />
+<p class="caption"><span class="caption-text">Figure 2: Performance benchmark of BitQT vs QTPy vs qtcluster.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>All calculations were performed on an AMD Ryzen5 Hexa-core Workstation with a
+processor speed of 3.6 GHz and 64GB RAM under a 64-bit Xubuntu 18.04 operating
+system. Run times and RAM peaks were recorded with the emph{/usr/bin/time}
+Linux command.</p>
+<p>For more details, please refer to the supporting information of the academic publication.</p>
+</div>
+<div class="section" id="useful-alternatives">
+<h2>Useful Alternatives<a class="headerlink" href="#useful-alternatives" title="Permalink to this headline">¶</a></h2>
+<p>As we have described, BitQT is an heuristic approach that can be used as a
+replacement for the very time-consuming exact variants of Quality Threshold
+clustering of Molecular Dynamics. However, there exist other cheaper, popular,
+useful alternatives for geometrical clustering that might equally fit your needs.
+Here you go …</p>
+<p><a class="reference external" href="https://doi.org/10.1021/acs.jcim.9b00558">QTPy</a> is an exact implementation of
+the original Quality Thresold for Molecular Dynamics. Technically, this ones is
+not cheaper, but you might want to consider it for benchmark purposes. Implemented
+using an RMSD square matrix of floats (half-precision).</p>
+<p><a class="reference external" href="https://doi.org/10.1021/acs.jcim.9b00828">BitClust</a> is an exact implementation
+of a very popular clustering algorithm. You may have heard of it as daura, qt-like,
+qt, neighbor-based or gromos. It has been implemented in VMD, GROMACS, WORDOM, PyPROCT
+and others. BitClust is implemented using an RMSD-encoded square matrix of bits.</p>
+<p><a class="reference external" href="https://github.com/LQCT/RCDPeaks">RCDPeaks</a> is, to the best of our knwoledge,
+the first exact implementation of Density Peaks clustering that does not need a
+square matrix of floats. Instead, it uses a dual-heap approach so it is very lightweight
+and faster than other alternatives.</p>
+<p><a class="reference external" href="https://github.com/LQCT/mdscan">MDSCAN</a> is an alternative to HDBSCAN that uses
+RMSD as metric but does not need a square matrix to work as it was implemented using
+an efficient dual-heap approach. HDBSCAN is perhaps on of the most robust clustering
+algorithms out there. It has been succesfully apllied to Molecular Dynamics.
+However, most implementations do not include RMSD as similarity metric. The workaround
+for those alternatives is to accept a precomputed square float matrix that is too
+costly when dealing with long trajectories.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to BitQT’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Roy Gonzalez-Aleman
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
