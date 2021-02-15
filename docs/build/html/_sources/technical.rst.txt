@@ -51,16 +51,15 @@ must pass a path to a topology file. Valid topology extensions are  ``.pdb``,
 ``.pdb.gz``, ``.h5``, ``.lh5``, ``.prmtop``, ``.parm7``, ``.prm7``, ``.psf``,
 ``.mol2``, ``.hoomdxml``, ``.gro``, ``.arc`` and ``.hdf5``.
 
-``-first (int, default=0):`` First frame to analyze (starting count from 0)
+``-first (int, default=0):`` The first frame to analyze (starting the count from 0)
 
-``-last (int, default=last):`` Last frame to analyze (starting count from 0).
-Last frame is internally detected.
+``-last (int, default=last):`` Last frame to analyze (starting the count from 0).
+The last frame is internally detected.
 
-``-stride (int, default=1):`` Stride of frames to analyze. You might want to use
-this argument to reduce the trajectory size when performing exploratory analysis.
+``-stride (int, default=1):`` Stride of frames to analyze. You might want to use this argument for reducing the trajectory size when performing exploratory analysis.
 
 ``-sel (str, default='all'):`` Atom selection. BitQT inherits ``MDtraj``
-syntax selection which is very flexible. Common cases are listed at the
+very flexible syntax selection. Common cases are listed at the
 `Syntax Selection`_ section. 
 
   
@@ -68,11 +67,11 @@ syntax selection which is very flexible. Common cases are listed at the
 (1 A = 0.1 nm).
 
 ``-min_clust_size (int, default=2):`` Minimum number of frames inside returned clusters.
-0 is not a meaningful value and 1 implies an unclustered frame (no other frame is
-similar to it). Greater values of this parameter may speed up the algorithm with
+0 is not a meaningful value, and 1 implies an unclustered frame (no other frame is
+similar). Greater values of this parameter may speed up the algorithm with
 loss of uniformity in retrieved clusters.
 
-``-nclust (int, default=all):`` Maximum number of calculated clusters. Change the default
+``-nclust (int, default=all):`` The maximum number of calculated clusters. Change the default
 for a better performance whenever you only need to inspect the first clusters.
 
 ``-ref (int, default=0):`` Reference frame to align trajectory.
@@ -84,10 +83,7 @@ BitQT checks for outdir existence to avoid overwriting it.
 Syntax Selection 
 ----------------
 
-BitQT inherits atom selection syntax from **MDTraj** which is similar to that
-in VMD. We reproduce below some of the **MDTraj** examples. Note that in BitQT
-all keywords (or their synonyms) string are passed directly to ``-sel`` argument.
-For more details on possible syntax, please refer to
+BitQT inherits atom selection syntax from **MDTraj**, which is similar to that in VMD. We reproduce below some of the **MDTraj** examples. Note that in BitQT, all keywords (or their synonyms) string are passed directly to ``-sel`` argument. For more details on possible syntax, please refer to
 `MDTraj original documentation <http://mdtraj.org/1.9.4/atom_selection.html>`_.
 
 BitQT recognizes the following keywords.
@@ -132,4 +128,5 @@ the form ``<expression> <low> to <high>``, which resolves to ``<low> <=
     # The following queries are equivalent
     -sel "resid 10 to 30"
     -sel "(10 <= resid) and (resid <= 30)"
+
 

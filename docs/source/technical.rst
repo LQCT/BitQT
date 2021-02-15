@@ -51,7 +51,7 @@ must pass a path to a topology file. Valid topology extensions are  ``.pdb``,
 ``.pdb.gz``, ``.h5``, ``.lh5``, ``.prmtop``, ``.parm7``, ``.prm7``, ``.psf``,
 ``.mol2``, ``.hoomdxml``, ``.gro``, ``.arc`` and ``.hdf5``.
 
-``-first (int, default=0):``The first frame to analyze (starting the count from 0)
+``-first (int, default=0):`` The first frame to analyze (starting the count from 0)
 
 ``-last (int, default=last):`` Last frame to analyze (starting the count from 0).
 The last frame is internally detected.
@@ -71,7 +71,7 @@ very flexible syntax selection. Common cases are listed at the
 similar). Greater values of this parameter may speed up the algorithm with
 loss of uniformity in retrieved clusters.
 
-``-nclust (int, default=all):``The maximum number of calculated clusters. Change the default
+``-nclust (int, default=all):`` The maximum number of calculated clusters. Change the default
 for a better performance whenever you only need to inspect the first clusters.
 
 ``-ref (int, default=0):`` Reference frame to align trajectory.

@@ -230,21 +230,20 @@ includes topological information this argument is not required. Otherwise, user
 must pass a path to a topology file. Valid topology extensions are  <code class="docutils literal notranslate"><span class="pre">.pdb</span></code>,
 <code class="docutils literal notranslate"><span class="pre">.pdb.gz</span></code>, <code class="docutils literal notranslate"><span class="pre">.h5</span></code>, <code class="docutils literal notranslate"><span class="pre">.lh5</span></code>, <code class="docutils literal notranslate"><span class="pre">.prmtop</span></code>, <code class="docutils literal notranslate"><span class="pre">.parm7</span></code>, <code class="docutils literal notranslate"><span class="pre">.prm7</span></code>, <code class="docutils literal notranslate"><span class="pre">.psf</span></code>,
 <code class="docutils literal notranslate"><span class="pre">.mol2</span></code>, <code class="docutils literal notranslate"><span class="pre">.hoomdxml</span></code>, <code class="docutils literal notranslate"><span class="pre">.gro</span></code>, <code class="docutils literal notranslate"><span class="pre">.arc</span></code> and <code class="docutils literal notranslate"><span class="pre">.hdf5</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">-first</span> <span class="pre">(int,</span> <span class="pre">default=0):</span></code> First frame to analyze (starting count from 0)</p>
-<p><code class="docutils literal notranslate"><span class="pre">-last</span> <span class="pre">(int,</span> <span class="pre">default=last):</span></code> Last frame to analyze (starting count from 0).
-Last frame is internally detected.</p>
-<p><code class="docutils literal notranslate"><span class="pre">-stride</span> <span class="pre">(int,</span> <span class="pre">default=1):</span></code> Stride of frames to analyze. You might want to use
-this argument to reduce the trajectory size when performing exploratory analysis.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-first</span> <span class="pre">(int,</span> <span class="pre">default=0):</span></code> The first frame to analyze (starting the count from 0)</p>
+<p><code class="docutils literal notranslate"><span class="pre">-last</span> <span class="pre">(int,</span> <span class="pre">default=last):</span></code> Last frame to analyze (starting the count from 0).
+The last frame is internally detected.</p>
+<p><code class="docutils literal notranslate"><span class="pre">-stride</span> <span class="pre">(int,</span> <span class="pre">default=1):</span></code> Stride of frames to analyze. You might want to use this argument for reducing the trajectory size when performing exploratory analysis.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-sel</span> <span class="pre">(str,</span> <span class="pre">default='all'):</span></code> Atom selection. BitQT inherits <code class="docutils literal notranslate"><span class="pre">MDtraj</span></code>
-syntax selection which is very flexible. Common cases are listed at the
+very flexible syntax selection. Common cases are listed at the
 <a class="reference internal" href="#syntax-selection">Syntax Selection</a> section.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-cutoff</span> <span class="pre">(int,</span> <span class="pre">default=2):</span></code> RMSD cutoff for similarity measures given in Angstroms
 (1 A = 0.1 nm).</p>
 <p><code class="docutils literal notranslate"><span class="pre">-min_clust_size</span> <span class="pre">(int,</span> <span class="pre">default=2):</span></code> Minimum number of frames inside returned clusters.
-0 is not a meaningful value and 1 implies an unclustered frame (no other frame is
-similar to it). Greater values of this parameter may speed up the algorithm with
+0 is not a meaningful value, and 1 implies an unclustered frame (no other frame is
+similar). Greater values of this parameter may speed up the algorithm with
 loss of uniformity in retrieved clusters.</p>
-<p><code class="docutils literal notranslate"><span class="pre">-nclust</span> <span class="pre">(int,</span> <span class="pre">default=all):</span></code> Maximum number of calculated clusters. Change the default
+<p><code class="docutils literal notranslate"><span class="pre">-nclust</span> <span class="pre">(int,</span> <span class="pre">default=all):</span></code> The maximum number of calculated clusters. Change the default
 for a better performance whenever you only need to inspect the first clusters.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-ref</span> <span class="pre">(int,</span> <span class="pre">default=0):</span></code> Reference frame to align trajectory.</p>
 <p><code class="docutils literal notranslate"><span class="pre">-odir</span> <span class="pre">(str,</span> <span class="pre">default=&quot;./bitQT_outputs&quot;):</span></code> Output directory to store analysis.
@@ -252,10 +251,7 @@ BitQT checks for outdir existence to avoid overwriting it.</p>
 </div>
 <div class="section" id="syntax-selection">
 <h2>Syntax Selection<a class="headerlink" href="#syntax-selection" title="Permalink to this headline">¶</a></h2>
-<p>BitQT inherits atom selection syntax from <strong>MDTraj</strong> which is similar to that
-in VMD. We reproduce below some of the <strong>MDTraj</strong> examples. Note that in BitQT
-all keywords (or their synonyms) string are passed directly to <code class="docutils literal notranslate"><span class="pre">-sel</span></code> argument.
-For more details on possible syntax, please refer to
+<p>BitQT inherits atom selection syntax from <strong>MDTraj</strong>, which is similar to that in VMD. We reproduce below some of the <strong>MDTraj</strong> examples. Note that in BitQT, all keywords (or their synonyms) string are passed directly to <code class="docutils literal notranslate"><span class="pre">-sel</span></code> argument. For more details on possible syntax, please refer to
 <a class="reference external" href="http://mdtraj.org/1.9.4/atom_selection.html">MDTraj original documentation</a>.</p>
 <p>BitQT recognizes the following keywords.</p>
 <table class="docutils align-default">
