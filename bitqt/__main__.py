@@ -688,7 +688,7 @@ def get_cluster_stats(clusters, outdir):
     return clusters_df
 
 
-if __name__ == '__main__':
+def main():
     # >>>> Debugging <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     # import argparse
     # args = argparse.Namespace()
@@ -816,3 +816,7 @@ if __name__ == '__main__':
                                     clusters_array[:m], args.outdir)
     cluster_stats = get_cluster_stats(clusters_array[:m], args.outdir)
     print('\n\nNormal Termination of BitQT :)')
+
+
+if __name__ == '__main__':
+    main()
