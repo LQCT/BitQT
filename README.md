@@ -8,9 +8,9 @@ of QT](https://doi.org/10.1021/acs.jcim.9b00558).
 
 ## Home Page
 
-BitQT´s latest documentation including installation instructions, tutorials, etc. is available [here]().  
+BitQT´s latest documentation including installation instructions, tutorials, etc. is available [here](https://bitqt.readthedocs.io).  
 
-## Citation
+## Citation (work in-press)
 
 If you make use of BitQT in your scientific work, [cite it ;)]()
 

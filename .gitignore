@@ -1,5 +1,11 @@
 bitQT_outputs
 test/pycache*
+<<<<<<< HEAD
 bitqt.egg-info
 build
 dist
+=======
+build
+dist
+bitqt.egg-info
+>>>>>>> master
