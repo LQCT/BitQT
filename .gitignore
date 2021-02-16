@@ -1,2 +1,5 @@
 bitQT_outputs
 test/pycache*
+build
+dist
+bitqt.egg-info
