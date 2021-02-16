@@ -17,7 +17,6 @@ setup(
     url="https://github.com/LQCT/BitQT.git,
     author="Roy Gonzalez-Aleman",
     author_email="roy_gonzalez@fq.uh.cu",
-    license="MIT",
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
