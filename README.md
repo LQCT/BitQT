@@ -27,7 +27,7 @@ It is recommended that you install __MDTraj__ using conda.
 
 After successfully installing __MDTraj__, you can easily install BitQT and the rest of its dependencies using pip.
 
-“`pip install bitqt` “
+`pip install bitqt`
 
 
 + __Via **GitHub**__
