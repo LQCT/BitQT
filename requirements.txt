@@ -1,0 +1,4 @@
+pandas>=1.1.3
+bitarray>=1.6.1
+numpy>=1.19.2
+mdtraj>=1.9.3
