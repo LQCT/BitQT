@@ -85,6 +85,12 @@ Output options:
                        bitQT_outputs]
 ```
 
+In the example folder, you can find a topology and trajectory files to run a bitqt test.
+Type the next command in the console and check if you can reproduce the content of the examples/output directory:
+
+```bitqt -traj aligned_original_tau_6K.dcd -top aligned_tau.pdb -cutoff 4 -odir outputs``` 
+ 
+ 
 ## Citation (work in-press)
 
 If you make use of BitQT in your scientific work, [cite it ;)]()
