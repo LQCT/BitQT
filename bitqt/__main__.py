@@ -74,7 +74,7 @@ def parse_arguments():
     clust = parser.add_argument_group(title='Clustering options')
     clust.add_argument('-cutoff', action='store', dest='cutoff',
                        help='RMSD cutoff [default: %(default)s]',
-                       type=int, required=False, default=2, metavar='k')
+                       type=float, required=False, default=2, metavar='k')
     clust.add_argument('-min_clust_size', action='store',
                        dest='min_clust_size',
                        help='Minimum size of returned clusters\
@@ -742,7 +742,7 @@ def main():
     # =========================================================================
     # 2. Main algorithm: BitQT !
     # =========================================================================
-    while True:
+    while any(degrees):
         NCLUSTER += 1
         # ++++ Find a big clique early ++++++++++++++++++++++++++++++++++++++++
         big_node = degrees.argmax()
