@@ -9,3 +9,4 @@ build
 dist
 bitqt.egg-info
 >>>>>>> master
+.idea/*

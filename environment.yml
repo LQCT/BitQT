@@ -1,0 +1,11 @@
+name: bitqt
+channels:
+  - defaults
+  - conda-forge
+  - anaconda
+dependencies:
+  - python>=3.6
+  - bitarray
+  - numpy
+  - mdtraj
+  - pandas
